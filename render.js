@@ -37,6 +37,17 @@ function loadScreen() {
 
             // Ends the animation once the reverse cycle is finished
             if ( direction < 0) {
+
+                // Fades in the title screen using jQuery
+                $("#openingScreen").html("<h1 id = 'openingTitle'> Locked In </h1>");
+                $("#openingTitle").fadeIn(3000);
+
+                // Fades out tittle screen after 3 seconds
+                setInterval(() => {
+                    $("#openingTitle").fadeOut(3000);
+                    clearInterval(interval);
+                }, 5000);
+
                 clearInterval(interval);
             }
 
@@ -46,6 +57,7 @@ function loadScreen() {
         
         imgElement.src = images[index];
     }, 500); // Change image every 500ms
+
 }
     // Start animation as soon as the page loads
 window.onload = loadScreen;
