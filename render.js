@@ -20,7 +20,7 @@ function loadScreen() {
     let direction = 1;
 
     // Selects the image element to use for animation
-    let imgElement = document.getElementById("lockImage");
+    let imgElement = $("#lockImage");
 
     // Fail safe for if image element is not included
     if (!imgElement) {
@@ -29,7 +29,7 @@ function loadScreen() {
     }
 
     // Creates the lock animation and ends it after one full loop
-    let interval = setInterval(() => {
+    let interval1 = setInterval(() => {
         index += direction;
         
         // Checks for the need of a reverse animation direction
@@ -38,24 +38,30 @@ function loadScreen() {
             // Ends the animation once the reverse cycle is finished
             if ( direction < 0) {
 
-                // Fades in the title screen using jQuery
-                $("#openingScreen").html("<h1 id = 'openingTitle'> Locked In </h1>");
-                $("#openingTitle").fadeIn(3000);
+                // Fades out the animation image
+                imgElement.fadeOut(3000);
+
+                // Fades in the title screen after the animation has faded out
+                let interval2 = setInterval(() => {
+                    $("#openingScreen").html("<h1 id = 'openingTitle'> Locked In </h1>");
+                    $("#openingTitle").fadeIn(3000);
+                    clearInterval(interval2);
+                }, 3000);
 
                 // Fades out tittle screen after 3 seconds
-                setInterval(() => {
+                let interval3 = setInterval(() => {
                     $("#openingTitle").fadeOut(3000);
-                    clearInterval(interval);
-                }, 5000);
+                    clearInterval(interval3);
+                }, 3000);
 
-                clearInterval(interval);
+                clearInterval(interval1);
             }
 
             // Reverse direction of animation
             direction *= -1; 
         }
         
-        imgElement.src = images[index];
+        imgElement.attr("src", images[index]);
     }, 500); // Change image every 500ms
 
 }
