@@ -20,7 +20,14 @@
   <body>
 
     <!-- Div for opening lock animation and title screens (Styles to automatically be centered of window size) -->
-    <div id="openingScreen"><img id="lockImage" src = "../images/1.png"></div>
+    <div class ="screen" id="openingScreen"><img id="lockImage" src = "../images/1.png"></div>
+
+    <!-- Div to recieve the user's name if not already stored on file -->
+    <div class ="screen" id="getUserName">
+        <h4>What's your name?</h4>
+        <br>
+        <input type="text" minlength="1" id="username" required autofocus pattern="[A-Za-z]*" placeholder="Name">
+    </div>
     
   </body>
 </html>
