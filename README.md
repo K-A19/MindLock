@@ -6,14 +6,14 @@
 
 ## 📌 The Concept
 
-- ⏱️ Study Timer Session
-- 📊 Progress analytics
-- ✅ Task management
-- 🔒 Distraction locking
-- 🎧 Spotify Links
-- 💬 ChatGPT
-- ☁️ Cloud Storage
-- ✍️ Google and Apple Sign in
+- Study Timer Session
+- Progress analytics
+- Task management
+- Distraction locking
+- Spotify Links
+- ChatGPT
+- Cloud Storage
+- Google and Apple Sign in
 
 ---
 
